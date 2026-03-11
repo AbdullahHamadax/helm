@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{
           __html: `
             try {
-              var t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+              var t = localStorage.getItem('theme') || 'light';
               document.documentElement.classList.toggle('dark', t === 'dark');
             } catch(e) {}
           `
