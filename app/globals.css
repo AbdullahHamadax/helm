@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+:root {
+  --bg-primary: #FFFFF0;
+  --bg-secondary: #F5F5F0;
+  --text-primary: #0A0A0A;
+  --text-secondary: #3A3A3A;
+  --border: #0A0A0A;
+  --shadow: #0A0A0A;
+}
+
+.dark {
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #141414;
+  --text-primary: #FFFFFF;
+  --text-secondary: #A3A3A3;
+  --border: #FFFFFF;
+  --shadow: #FFFFFF;
+}
+
+@theme inline {
+  --color-neo-amber: #FFB300;
+  --color-neo-blue: #4361EE;
+  --color-neo-green: #06D6A0;
+  --color-neo-orange: #FF6B35;
+  --color-neo-purple: #9B5DE5;
+  --color-neo-pink: #FF0F80;
+  --color-neo-yellow: #FFE500;
+  --color-neo-bg: #FFFFF0;
+  --color-neo-dark: #0A0A0A;
+  --color-neo-card: #141414;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --shadow-neo: 4px 4px 0px 0px #0A0A0A;
+  --shadow-neo-hover: 6px 6px 0px 0px #0A0A0A;
+  --shadow-neo-white: 4px 4px 0px 0px #F5F5F0;
+  --shadow-neo-white-hover: 6px 6px 0px 0px #F5F5F0;
+  --shadow-neo-yellow: 4px 4px 0px 0px #FFE500;
+  --shadow-neo-amber: 4px 4px 0px 0px #FFB300;
+  --shadow-neo-blue: 4px 4px 0px 0px #4361EE;
+  --shadow-neo-green: 4px 4px 0px 0px #06D6A0;
+  --shadow-neo-orange: 4px 4px 0px 0px #FF6B35;
+  --shadow-neo-purple: 4px 4px 0px 0px #9B5DE5;
+  --shadow-neo-pink: 4px 4px 0px 0px #FF0F80;
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-bounce-subtle: bounce-subtle 2s ease-in-out infinite;
+  --animate-slide-up: slide-up 200ms ease-out;
+  --animate-fade-in: fade-in 300ms ease-out;
+  --animate-slide-up-fade: slide-up-fade 600ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-slide-in-left: slide-in-left 600ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-slide-in-right: slide-in-right 600ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-scale-in: scale-in 500ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-pop: pop 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes bounce-subtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes slide-up {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slide-up-fade {
+  0% { transform: translateY(40px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slide-in-left {
+  0% { transform: translateX(-40px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slide-in-right {
+  0% { transform: translateX(40px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes scale-in {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Scroll reveal utility classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger delay utilities */
+.stagger-1 { transition-delay: 50ms; }
+.stagger-2 { transition-delay: 100ms; }
+.stagger-3 { transition-delay: 150ms; }
+.stagger-4 { transition-delay: 200ms; }
+.stagger-5 { transition-delay: 250ms; }
+.stagger-6 { transition-delay: 300ms; }
+.stagger-7 { transition-delay: 350ms; }
+.stagger-8 { transition-delay: 400ms; }
+
+/* Highlight underline decoration */
+.highlight-underline {
+  background-image: linear-gradient(transparent 60%, #FFB300 60%);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.4s ease;
+}
+.highlight-underline.active, .highlight-underline:hover {
+  background-size: 100% 100%;
+}
+
+/* Subtle pattern for section backgrounds */
+.pattern-dots {
+  background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.04;
+}
+
+/* Shimmer effect for highlighted cards */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  animation: shimmer-sweep 3s ease-in-out infinite;
+}
+@keyframes shimmer-sweep {
+  0%, 100% { left: -100%; }
+  50% { left: 150%; }
+}
+
+/* Neobrutalism Grid Background */
+.bg-grid {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+}
+.dark .bg-grid {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  transition: background-color 200ms, color 200ms;
+}
+
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--border);
+  outline-offset: 2px;
+}
