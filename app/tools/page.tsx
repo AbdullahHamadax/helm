@@ -41,7 +41,10 @@ const CATEGORY_ORDER: ToolCategory[] = [
   "devops_cicd",
   "security",
   "browser_devtools",
+  "testing", // ← Add this
+  "learning", // ← Add this
 ];
+
 const CATEGORY_LABELS: Record<ToolCategory, string> = {
   student_pack: "Student Pack",
   editor: "Code Editors & IDEs",
@@ -58,6 +61,8 @@ const CATEGORY_LABELS: Record<ToolCategory, string> = {
   devops_cicd: "CI/CD",
   security: "Security",
   browser_devtools: "DevTools",
+  testing: "Testing Tools", // ← Add this
+  learning: "Learning Platforms", // ← Add this
 };
 
 function ToolCard({ tool }: { tool: (typeof tools)[0] }) {

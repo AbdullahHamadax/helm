@@ -216,9 +216,7 @@ function TrackContent({ track }: { track: Track }) {
                   <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-0.5">
                     Phase {phase.number}
                   </p>
-                  <p className="text-lg">
-                    {phase.name} — {phase.arabicName}
-                  </p>
+                  <p className="text-lg">{phase.name}</p>
                   <p className="text-sm font-normal text-gray-600 dark:text-gray-400">
                     {phase.durationEstimate} • {phase.steps.length} steps
                   </p>
@@ -251,7 +249,7 @@ function TrackContent({ track }: { track: Track }) {
                         Phase {phase.number}
                       </p>
                       <p className="font-heading font-bold text-lg">
-                        {phase.name} — {phase.arabicName}
+                        {phase.name}
                       </p>
                       <p className="font-body text-sm font-normal text-gray-600 dark:text-gray-400">
                         {phase.durationEstimate}
@@ -375,12 +373,6 @@ export default function RoadmapsPage() {
               <h2 className="font-heading font-black text-2xl">
                 {currentTrack.name}
               </h2>
-              <p
-                className="font-heading text-base text-gray-500 dark:text-gray-400"
-                dir="rtl"
-              >
-                {currentTrack.arabicName}
-              </p>
             </div>
           </div>
           <p className="font-body text-base">{currentTrack.description}</p>
