@@ -148,7 +148,7 @@ function TrackContent({ track }: { track: Track }) {
   const handleShare = () => {
     const pct = percentage(allStepIds.length);
     navigator.clipboard.writeText(
-      `I'm ${pct}% through the ${track.name} roadmap on EG CS Guide! 🚀 https://eg-cs-guide.vercel.app/roadmaps`,
+      `I'm ${pct}% through the ${track.name} roadmap on EG CS Guide! 🚀 https://hellm.vercel.app/roadmaps`,
     );
     show(
       `Progress shared! You're ${pct}% through ${track.name}!`,
