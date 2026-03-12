@@ -8,12 +8,15 @@ import {
   AUTHOR_GITHUB,
   GITHUB_REPO,
 } from "@/lib/constants";
-import { Star, Share2, Heart, ArrowUpRight } from "lucide-react";
+import { Star, Share2, Heart, ArrowUpRight, MessageSquareCode } from "lucide-react";
 import { useToast } from "@/components/ui/NeoToast";
 import { NeoStar } from "@/components/ui/NeoStar";
+import { FeedbackModal } from "@/components/feedback/FeedbackModal";
+import { useState } from "react";
 
 export function Footer() {
   const { show } = useToast();
+  const [showFeedbackModal, setShowFeedbackModal] = useState(false);
 
   const handleShare = () => {
     navigator.clipboard.writeText(window.location.origin);
@@ -60,9 +63,15 @@ export function Footer() {
               </a>
               <button
                 onClick={handleShare}
-                className="flex items-center gap-2 bg-white text-black border-2 border-black dark:border-white px-4 py-2 font-heading font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
+                className="flex items-center gap-2 bg-white text-black border-2 border-black dark:border-white px-4 py-2 font-heading font-bold shadow-[4px_4px_0px_0px_#0A0A0A] dark:shadow-[4px_4px_0px_0px_#F5F5F0] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
               >
                 <Share2 size={18} /> Share Site
+              </button>
+              <button
+                onClick={() => setShowFeedbackModal(true)}
+                className="flex items-center gap-2 bg-neo-pink text-white border-2 border-black dark:border-white px-4 py-2 font-heading font-bold shadow-[4px_4px_0px_0px_#0A0A0A] dark:shadow-[4px_4px_0px_0px_#F5F5F0] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
+              >
+                <MessageSquareCode size={18} /> Feedback
               </button>
             </div>
           </div>
@@ -165,6 +174,7 @@ export function Footer() {
           </div>
         </div>
       </div>
+      {showFeedbackModal && <FeedbackModal onClose={() => setShowFeedbackModal(false)} />}
     </footer>
   );
 }

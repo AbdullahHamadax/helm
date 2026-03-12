@@ -289,14 +289,6 @@ function TrackContent({ track }: { track: Track }) {
           }))}
         />
       </div>
-
-      {/* Egyptian Market Note */}
-      <NeoCard className="p-5" accent={track.accentColor}>
-        <p className="font-body font-semibold text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-2">
-          🇪🇬 Egyptian Market Note
-        </p>
-        <p className="font-body text-sm">{track.egyptianMarketNote}</p>
-      </NeoCard>
     </div>
   );
 }
@@ -349,10 +341,10 @@ export default function RoadmapsPage() {
                 style={
                   activeTrack === track.id
                     ? {
-                        backgroundColor: track.accentColor,
-                        color: "#0A0A0A",
-                        borderColor: track.accentColor,
-                      }
+                      backgroundColor: track.accentColor,
+                      color: "#0A0A0A",
+                      borderColor: track.accentColor,
+                    }
                     : {}
                 }
               >

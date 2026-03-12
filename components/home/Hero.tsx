@@ -27,7 +27,7 @@ export function Hero({ onFeelingLost }: HeroProps) {
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <NeoStar
           variant="sparkle"
-          className="absolute top-20 right-10 md:right-20 w-16 h-16 md:w-24 md:h-24 animate-bounce-subtle text-neo-blue drop-shadow-[4px_4px_0px_#0A0A0A] dark:drop-shadow-[4px_4px_0px_#FFF]"
+          className="absolute top-10 -right-4 md:right-20 w-16 h-16 md:w-24 md:h-24 animate-bounce-subtle text-neo-blue drop-shadow-[4px_4px_0px_#0A0A0A] dark:drop-shadow-[4px_4px_0px_#FFF] opacity-40 md:opacity-100"
         />
         <NeoStar
           variant="fat-star"
@@ -51,10 +51,10 @@ export function Hero({ onFeelingLost }: HeroProps) {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-16 w-full relative z-10">
-        <div className="max-w-4xl">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-12 md:py-16 w-full relative z-10 flex flex-col items-center md:items-start text-center md:text-left">
+        <div className="max-w-4xl flex flex-col items-center md:items-start">
           <p
-            className={`font-body font-semibold text-sm md:text-base uppercase tracking-widest text-black/70 dark:text-white/70 mb-4 border-2 border-black dark:border-white inline-block px-3 py-1 transition-all duration-700 ${
+            className={`font-body font-semibold text-[10px] md:text-base uppercase tracking-widest text-black/70 dark:text-white/70 mb-6 border-2 border-black dark:border-white inline-block px-3 py-1 transition-all duration-700 ${
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
@@ -62,21 +62,23 @@ export function Hero({ onFeelingLost }: HeroProps) {
           </p>
 
           <h1
-            className={`font-heading font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-black dark:text-white leading-[1.05] mb-4 transition-all duration-700 delay-100 ${
+            className={`font-heading font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-black dark:text-white leading-[1.1] md:leading-[1.05] mb-6 transition-all duration-700 delay-100 ${
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
+            <span className="block md:inline">
             <SplitText
               text="Everything you need  "
               delay={30}
-              className="mr-3"
+              className="md:mr-3"
             />
-            <span className="relative inline-block">
+          </span>
+            <span className="relative inline-block mt-1 md:mt-0">
               <span className="relative z-10">
                 <SplitText text="survive & thrive" delay={50} />
               </span>
               <span
-                className={`absolute bottom-1 left-0 h-3 bg-black/20 dark:bg-white/20 -z-0 transition-all duration-700 delay-500 ${
+                className={`absolute bottom-1 left-0 h-2 md:h-3 bg-neo-yellow dark:bg-neo-yellow/30 -z-0 transition-all duration-700 delay-500 ${
                   mounted ? "w-full" : "w-0"
                 }`}
               />
@@ -84,7 +86,7 @@ export function Hero({ onFeelingLost }: HeroProps) {
             <SplitText
               text="in computer science"
               delay={70}
-              className="ml-3 mt-2"
+              className="mt-2"
             />
           </h1>
 
@@ -98,7 +100,7 @@ export function Hero({ onFeelingLost }: HeroProps) {
           </p>
 
           <div
-            className={`flex flex-wrap gap-3 transition-all duration-700 delay-[400ms] ${
+            className={`flex flex-wrap justify-center md:justify-start gap-3 transition-all duration-700 delay-[400ms] ${
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >

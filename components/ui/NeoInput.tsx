@@ -14,11 +14,12 @@ interface NeoInputProps {
   rows?: number
   maxLength?: number
   disabled?: boolean
+  required?: boolean
 }
 
 export function NeoInput({
   placeholder, value, onChange, icon, clearable = false,
-  className, type = 'text', rows, maxLength, disabled
+  className, type = 'text', rows, maxLength, disabled, required
 }: NeoInputProps) {
   if (type === 'textarea') {
     return (
@@ -30,6 +31,7 @@ export function NeoInput({
           rows={rows ?? 4}
           maxLength={maxLength}
           disabled={disabled}
+          required={required}
           className={cn(
             'w-full border-2 border-black dark:border-white',
             'bg-white dark:bg-neo-card text-black dark:text-white',
@@ -62,6 +64,7 @@ export function NeoInput({
         onChange={e => onChange(e.target.value)}
         placeholder={placeholder}
         disabled={disabled}
+        required={required}
         className={cn(
           'w-full border-2 border-black dark:border-white',
           'bg-white dark:bg-neo-card text-black dark:text-white',
