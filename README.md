@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/u-wz/helm/main/public/Helm.svg" width="80" height="80" alt="Helm Logo" />
-  <h1>⛵ HELM</h1>
+  <img src="https://raw.githubusercontent.com/u-wz/helm/main/public/Helm.svg" width="160" height="160" alt="Helm Logo" />
+
   <p><b>The North Star for Computer Science Students</b></p>
   <p><i>A premium, open-source guide for navigating the CS journey.</i></p>
 
